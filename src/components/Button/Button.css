@@ -1,0 +1,13 @@
+.Button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  opacity: .6;
+  padding: 0;
+  transition: opacity 280ms ease-in-out;
+}
+
+.Button:hover {
+  opacity: 1;
+}
