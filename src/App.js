@@ -1,24 +1,10 @@
 import React from 'react';
+import PortalPlayer from './PortalPlayer'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PortalPlayer src="http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4" />
   );
 }
 
