@@ -8,7 +8,7 @@ const Portal = ({
 }) => {
   return (
     <div className={cn('PortalPlayer', className)}>
-      <video src={src} />
+      <video className="PortalPlayer__video" src={src} />
     </div>
   )
 }
