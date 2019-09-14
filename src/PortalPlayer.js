@@ -5,6 +5,7 @@ import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
 import Button from './components/Button/Button'
 import Selector from './components/Selector/Selector'
+import Volume from './components/Volume/Volume'
 
 import './PortalPlayer.css'
 
@@ -43,6 +44,12 @@ const Portal = ({
         src={src} 
       />
       <Overlay>
+        <Volume
+          className="PortalPlayer__volume"
+          onChange={(level) => {
+            videoRef.current.volume = level / 100
+          }}
+        />
         <Selector 
           className="PortalPlayer__subtitles-selector"
           options={options} 
