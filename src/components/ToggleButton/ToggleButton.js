@@ -8,6 +8,9 @@ const ToggleButton = ({
   onChange = () => {},
   initial = false
 }) => {
+  if (typeof initial === 'function') {
+    initial = initial()
+  }
   const [active, setActive] = useState(Boolean(initial))
 
   return (
