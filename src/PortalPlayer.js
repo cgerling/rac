@@ -79,7 +79,7 @@ const Portal = ({
         </Button>
         <ToggleButton
           className="PortalPlayer__playback-button"
-          initial={() => videoRef.current && !videoRef.current.paused}
+          value={() => videoRef.current && !videoRef.current.paused}
           onChange={(active) => {
             if (!active) {
               return videoRef.current.pause()
