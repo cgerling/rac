@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import cn from './utils/classNames'
+import { cn } from './utils/classNames'
 import { Maximize, Minimize, Play, Pause, ChevronsLeft, ChevronsRight, MessageSquare } from 'react-feather'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
