@@ -9,6 +9,6 @@
   transition: opacity 280ms ease-in-out;
 }
 
-.Button--active {
+.Button_active {
   opacity: 1;
 }
