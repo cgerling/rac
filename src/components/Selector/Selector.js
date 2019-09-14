@@ -17,7 +17,7 @@ const Selector = ({
 
   return (
     <Button
-      active={() => open}
+      focus={() => open}
       className={cn('Selector', {}, className)}
       onClick={() => setOpen(!open)}
       onPointerLeave={() => setOpen(false)}
