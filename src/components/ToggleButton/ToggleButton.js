@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import cn from '../../utils/classNames'
+import { cn } from '../../utils/classNames'
 import { evaluate } from '../../utils/props'
 import Button from '../Button/Button'
 
