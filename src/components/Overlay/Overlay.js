@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import cn from '../../utils/classNames'
+import { cn } from '../../utils/classNames'
 import './Overlay.css'
 
 const Overlay = ({ className, children, }) => {
