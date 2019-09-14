@@ -43,7 +43,7 @@ const Portal = ({
         ref={videoRef} 
         src={src} 
       />
-      <Overlay>
+      <Overlay className="PortalPlayer__controls">
         <Volume
           className="PortalPlayer__volume"
           onChange={(level) => {
