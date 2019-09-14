@@ -9,6 +9,6 @@
   transition: opacity 280ms ease-in-out;
 }
 
-.Button:hover {
+.Button--active {
   opacity: 1;
 }
