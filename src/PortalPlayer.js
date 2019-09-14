@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import cn from './utils/classNames'
-import { Maximize, Minimize, Play, Pause } from 'react-feather'
+import { Maximize, Minimize, Play, Pause, ChevronsLeft, ChevronsRight } from 'react-feather'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
+import Button from './components/Button/Button'
 
 import './PortalPlayer.css'
 
@@ -19,11 +20,28 @@ const Portal = ({
       ref={playerRef}
     >
       <video 
-        className="PortalPlayer__video" 
+        className="PortalPlayer__video"
+        controls
         ref={videoRef} 
         src={src} 
       />
       <Overlay>
+        <Button
+          className="PortalPlayer__forward-time"
+          onClick={() => {
+            videoRef.current.currentTime -= 5
+          }}
+        >
+          <ChevronsLeft />
+        </Button>
+        <Button
+          className="PortalPlayer__forward-time"
+          onClick={() => {
+            videoRef.current.currentTime += 5
+          }}
+        >
+          <ChevronsRight />
+        </Button>
         <ToggleButton
           className="PortalPlayer__playback-button"
           initial={() => videoRef.current && !videoRef.current.paused}

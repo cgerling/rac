@@ -5,12 +5,12 @@ import './Button.css'
 const Button = ({ 
   children, 
   className,
-  onClick = () => {} 
+  ...props
 }) => {
   return (
     <button 
       className={cn('Button', className)}
-      onClick={onClick}
+      {...props}
     >
       {children}
     </button>
