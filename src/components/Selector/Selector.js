@@ -7,6 +7,7 @@ import './Selector.css'
 
 const Selector = ({ 
   children,
+  className,
   options = [], 
   onChange = () => {},
   value = null
@@ -17,7 +18,7 @@ const Selector = ({
   return (
     <Button
       active={() => open}
-      className="Selector"
+      className={cn('Selector', {}, className)}
       onClick={() => setOpen(!open)}
       onPointerLeave={() => setOpen(false)}
     >
