@@ -1,6 +1,7 @@
 .Button {
   background: transparent;
   border: none;
+  color: inherit;
   cursor: pointer;
   margin: 0;
   opacity: .6;
