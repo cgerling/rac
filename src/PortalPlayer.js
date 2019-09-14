@@ -1,9 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import cn from './utils/classNames'
-import { Maximize, Minimize, Play, Pause, ChevronsLeft, ChevronsRight } from 'react-feather'
+import { Maximize, Minimize, Play, Pause, ChevronsLeft, ChevronsRight, MessageSquare } from 'react-feather'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
 import Button from './components/Button/Button'
+import Selector from './components/Selector/Selector'
 
 import './PortalPlayer.css'
 
@@ -13,6 +14,22 @@ const Portal = ({
 }) => {
   const playerRef = useRef(null)
   const videoRef = useRef(null)
+  const [, setSubtitle] = useState(null)
+
+  const options = [
+    {
+      label: 'English',
+      value: 'en-us'
+    },
+    {
+      label: 'Spanish',
+      value: 'es-es'
+    },
+    {
+      label: 'Português',
+      value: 'pt-br'
+    },
+  ]
 
   return (
     <div 
@@ -26,6 +43,13 @@ const Portal = ({
         src={src} 
       />
       <Overlay>
+        <Selector 
+          className="PortalPlayer__subtitles-selector"
+          options={options} 
+          onChange={(value) => setSubtitle(value)}
+        >
+          <MessageSquare />
+        </Selector>
         <Button
           className="PortalPlayer__backward-time"
           onClick={() => {
