@@ -1,0 +1,12 @@
+.Selector {
+  position: relative;
+}
+
+.Selector__list {
+  background: #000;
+  position: absolute;
+}
+
+.Selector__list-item {
+  color: white;
+}
