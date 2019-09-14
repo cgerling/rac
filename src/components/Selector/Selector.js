@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import cn from '../../utils/classNames'
+import { evaluate } from '../../utils/props'
 import Button from '../Button/Button'
 
 import './Selector.css'
@@ -7,8 +9,10 @@ const Selector = ({
   children,
   options = [], 
   onChange = () => {},
+  value = null
 }) => {
   const [open, setOpen] = useState(false)
+  const [selected, setSelected] = useState(evaluate(value))
 
   return (
     <Button
@@ -24,9 +28,13 @@ const Selector = ({
             {options.map(option => (
               <div
                 key={option.value}
-                className="Selector__list-item" 
+                className={cn(
+                  'Selector__list-item', 
+                  option.value === selected && 'Selector__list-item--selected'
+                )}
                 onClick={() => {
                   setOpen(false)
+                  setSelected(option.value)
                   onChange(option.value)
                 }}
               >

@@ -3,10 +3,15 @@
 }
 
 .Selector__list {
-  background: #000;
+  background: #000000cc;
   position: absolute;
+  left: 0;
 }
 
 .Selector__list-item {
   color: white;
+}
+
+.Selector__list-item--selected {
+  background: #000000;
 }
