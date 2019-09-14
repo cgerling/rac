@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import cn from './utils/classNames'
-import { Maximize, Minimize } from 'react-feather'
+import { Maximize, Minimize, Play, Pause } from 'react-feather'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
 
@@ -25,6 +25,25 @@ const Portal = ({
       />
       <Overlay>
         <ToggleButton
+          className="PortalPlayer__playback-button"
+          initial={() => videoRef.current && !videoRef.current.paused}
+          onChange={(active) => {
+            if (!active) {
+              return videoRef.current.pause()
+            }
+            
+            return videoRef.current.play().then(console.info.bind(console), console.error.bind(console))
+          }}
+        >
+          {(active) => {
+            if (!active) {
+              return <Play />
+            }
+
+            return <Pause />
+          }}
+        </ToggleButton>
+        <ToggleButton
           className="PortalPlayer__screen-toggle"
           initial={document.fullscreenElement}
           onChange={(active) => {
@@ -36,11 +55,11 @@ const Portal = ({
           }}
         >
           {(active) => {
-            if (active) {
-              return <Minimize />
+            if (!active) {
+              return <Maximize />
             }
 
-            return <Maximize />
+            return <Minimize />
           }}
         </ToggleButton>
       </Overlay>
