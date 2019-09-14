@@ -6,7 +6,8 @@ const ToggleButton = ({
   children, 
   className,
   onChange = () => {},
-  initial = false
+  initial = false,
+  ...props
 }) => {
   if (typeof initial === 'function') {
     initial = initial()
@@ -21,6 +22,7 @@ const ToggleButton = ({
         setActive(value)
         onChange(value)
       }}
+      {...props}
     >
       {children && children(active)}
     </Button>
