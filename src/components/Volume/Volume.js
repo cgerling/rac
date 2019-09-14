@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Volume as VolumeIcon, Volume1, Volume2, VolumeX } from 'react-feather'
+import { evaluate } from '../../utils/props'
 import ToggleButton from '../ToggleButton/ToggleButton'
 
 import './Volume.css'
@@ -8,11 +9,8 @@ const Volume = ({
   initial = 100,
   onChange = () => {},
 }) => {
-  if (typeof initial === 'function') {
-    initial = initial()
-  }
   const [open, setOpen] = useState(false)
-  const [level, setLevel] = useState(initial)
+  const [level, setLevel] = useState(evaluate(initial))
   const [muted, setMuted] = useState(false)
 
   let value = muted ? 0 : level

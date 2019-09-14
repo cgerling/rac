@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import cn from '../../utils/classNames'
+import { evaluate } from '../../utils/props'
 import Button from '../Button/Button'
 
 const ToggleButton = ({ 
@@ -9,10 +10,7 @@ const ToggleButton = ({
   value = false,
   ...props
 }) => {
-  if (typeof value === 'function') {
-    value = value()
-  }
-  const [active, setActive] = useState(Boolean(value))
+  const [active, setActive] = useState(Boolean(evaluate(value)))
 
   return (
     <Button
