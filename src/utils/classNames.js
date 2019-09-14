@@ -1,7 +1,17 @@
 import classNames from 'classnames'
 
-const cn = (base, className) => {
-  return classNames(base, className)
+export { default as cn } from 'classnames'
+
+
+export const mod = (base, modifiers) => {
+  const mods = Object.entries(modifiers).reduce((classNames, [name, active]) => {
+    const className = active && `${base}_${name}`
+    classNames.push(className)
+
+    return classNames
+  }, [])
+
+  return [base, ...mods]
 }
 
-export default cn
+export default (base, modifiers, ...rest) => classNames(mod(base, modifiers), rest)
