@@ -12,6 +12,6 @@
   color: white;
 }
 
-.Selector__list-item--selected {
+.Selector__list-item_selected {
   background: #000000;
 }

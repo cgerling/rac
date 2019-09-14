@@ -30,7 +30,7 @@ const Selector = ({
                 key={option.value}
                 className={cn(
                   'Selector__list-item', 
-                  option.value === selected && 'Selector__list-item--selected'
+                  { selected: option.value === selected }
                 )}
                 onClick={() => {
                   setOpen(false)
