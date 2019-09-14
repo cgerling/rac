@@ -10,8 +10,8 @@ const Portal = ({
   className,
   src,
 }) => {
-  const playerRef = useRef()
-  const videoRef = useRef()
+  const playerRef = useRef(null)
+  const videoRef = useRef(null)
 
   return (
     <div 
