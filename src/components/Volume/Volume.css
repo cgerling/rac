@@ -1,0 +1,11 @@
+.Volume {
+  position: relative;
+}
+
+.Volume__toggle {
+  
+}
+
+.Volume__slider {
+  position: absolute;
+}
