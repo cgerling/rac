@@ -27,7 +27,7 @@ const Portal = ({
       />
       <Overlay>
         <Button
-          className="PortalPlayer__forward-time"
+          className="PortalPlayer__backward-time"
           onClick={() => {
             videoRef.current.currentTime -= 5
           }}
