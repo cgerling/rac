@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
 import { cn } from '../../utils/classNames'
+import { evaluate } from '../../utils/props'
 import './Overlay.css'
 
-const Overlay = ({ className, children, }) => {
-  const [visible, setVisible] = useState(false)
+const Overlay = ({ 
+  className,
+  children,
+  initial = false
+}) => {
+  initial = evaluate(initial)
+  const [active, setActive] = useState(Boolean(initial))
 
   return (
     <div 
       className={cn('Overlay', className)}
-      onPointerEnter={() => setVisible(true)}
-      onPointerLeave={() => setVisible(false)}
+      onPointerEnter={() => setActive(true)}
+      onPointerLeave={() => setActive(false)}
     >
-      {visible && children}
+      {active && children}
     </div>
   )
 }
