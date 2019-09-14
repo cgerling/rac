@@ -5,8 +5,10 @@ import Button from '../Button/Button'
 const ToggleButton = ({ 
   children, 
   className,
-  onChange = () => {} }) => {
-  const [active, setActive] = useState(false)
+  onChange = () => {},
+  initial = false
+}) => {
+  const [active, setActive] = useState(Boolean(initial))
 
   return (
     <Button
