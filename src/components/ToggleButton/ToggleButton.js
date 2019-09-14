@@ -10,19 +10,19 @@ const ToggleButton = ({
   value = false,
   ...props
 }) => {
-  const [active, setActive] = useState(Boolean(evaluate(value)))
+  value = evaluate(value)
+  const [enabled, setEnabled] = useState(Boolean(value))
 
   return (
     <Button
       className={cn('ToggleButton', className)}
       onClick={() => {
-        const state = !active
-        setActive(state)
-        onChange(state)
+        setEnabled(!enabled)
+        onChange(!enabled)
       }}
       {...props}
     >
-      {children && children(active)}
+      {children && children(enabled)}
     </Button>
   )
 }
