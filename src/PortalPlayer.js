@@ -49,9 +49,7 @@ const Portal = ({
           onChange={(level) => {
             const volume = level / 100
             videoRef.current.volume = volume
-            if (volume === 0) {
-              videoRef.current.muted = true
-            }
+            videoRef.current.muted = volume === 0
           }}
         />
         <Selector 
