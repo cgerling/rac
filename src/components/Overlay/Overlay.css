@@ -5,3 +5,11 @@
   top: 0;
   width: 100%;
 }
+
+.Overlay__container {
+  display: none;
+}
+
+.Overlay__container_active {
+  display: block;
+}
