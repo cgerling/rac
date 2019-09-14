@@ -15,7 +15,7 @@ const Volume = ({
   const [level, setLevel] = useState(initial)
   const [muted, setMuted] = useState(false)
 
-  const value = muted ? 0 : level
+  let value = muted ? 0 : level
   return (
     <div
       className="Volume"
@@ -24,11 +24,12 @@ const Volume = ({
     >
       <ToggleButton 
         className="Volume__toggle"
-        initial={() => value}
+        value={() => value}
         onChange={(active) => {
-          const value = !active
-          setMuted(value)
-          onChange(value || level)
+          const muted = !active
+          setMuted(muted)
+          const value = muted ? 0 : level
+          onChange(value)
         }}
       >
         {(active) => {
@@ -53,8 +54,9 @@ const Volume = ({
           max="100"
           value={value}
           onChange={(e) => {
-            const value = e.target.value
+            value = Number.parseInt(e.target.value, 10)
             setLevel(value)
+            setMuted(false)
             onChange(value)
           }}
         />
