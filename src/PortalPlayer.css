@@ -1,10 +1,39 @@
 .PortalPlayer {
+  align-items: center;
   color: white;
-  display: inline-block;
+  display: inline-flex;
   font-size: 0;
+  justify-content: center;
   position: relative;
 }
 
 .PortalPlayer__video {
+  flex-grow: 1;
   pointer-events: none;
+}
+
+.PortalPlayer__playback {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  left: 50%;
+  padding: 0 10%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  width: 100%;
+}
+
+.PortalPlayer__controls {
+  align-items: center;
+  bottom: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 0 10% 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
 }
