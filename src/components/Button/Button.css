@@ -1,8 +1,11 @@
 .Button {
+  align-items: center;
   background: transparent;
   border: none;
   color: inherit;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
   margin: 0;
   opacity: .6;
   padding: 0;
