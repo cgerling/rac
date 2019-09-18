@@ -4,9 +4,11 @@
 
 .Selector__list {
   background: #000000cc;
+  bottom: 100%;
   display: none;
   left: 0;
   position: absolute;
+  top: auto;
 }
 
 .Selector__list_active {
