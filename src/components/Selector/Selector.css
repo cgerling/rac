@@ -4,8 +4,13 @@
 
 .Selector__list {
   background: #000000cc;
-  position: absolute;
+  display: none;
   left: 0;
+  position: absolute;
+}
+
+.Selector__list_active {
+  display: block;
 }
 
 .Selector__list-item {

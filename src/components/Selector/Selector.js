@@ -12,39 +12,35 @@ const Selector = ({
   onChange = () => {},
   value = null
 }) => {
-  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState(false)
   const [selected, setSelected] = useState(evaluate(value))
 
   return (
     <Button
-      focus={() => open}
+      focus={() => active}
       className={cn('Selector', {}, className)}
-      onClick={() => setOpen(!open)}
-      onPointerLeave={() => setOpen(false)}
+      onClick={() => setActive(!active)}
+      onPointerLeave={() => setActive(false)}
     >
       {children}
-      {
-        open && (
-          <div className="Selector__list">
-            {options.map(option => (
-              <div
-                key={option.value}
-                className={cn(
-                  'Selector__list-item', 
-                  { selected: option.value === selected }
-                )}
-                onClick={() => {
-                  setOpen(false)
-                  setSelected(option.value)
-                  onChange(option.value)
-                }}
-              >
-                {option.label}
-              </div>
-            ))}
+      <div className={cn('Selector__list', { active })}>
+        {options.map(option => (
+          <div
+            key={option.value}
+            className={cn(
+              'Selector__list-item', 
+              { selected: option.value === selected }
+            )}
+            onClick={() => {
+              setActive(false)
+              setSelected(option.value)
+              onChange(option.value)
+            }}
+          >
+            {option.label}
           </div>
-        )
-      }
+        ))}
+      </div>
     </Button>
   )
 }
