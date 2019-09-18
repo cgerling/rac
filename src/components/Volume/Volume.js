@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Volume as VolumeIcon, Volume1, Volume2, VolumeX } from 'react-feather'
+import cn from '../../utils/classNames'
 import { evaluate } from '../../utils/props'
 import ToggleButton from '../ToggleButton/ToggleButton'
 
@@ -43,22 +44,20 @@ const Volume = ({
           return icon
         }}
       </ToggleButton>
-      {open && (
-        <input 
-          className="Volume__slider"
-          type="range"
-          step="1"
-          min="0"
-          max="100"
-          value={value}
-          onChange={(e) => {
-            value = Number.parseInt(e.target.value, 10)
-            setLevel(value)
-            setMuted(false)
-            onChange(value)
-          }}
-        />
-      )}
+      <input 
+        className={cn('Volume__slider', { active: open })}
+        type="range"
+        step="1"
+        min="0"
+        max="100"
+        value={value}
+        onChange={(e) => {
+          value = Number.parseInt(e.target.value, 10)
+          setLevel(value)
+          setMuted(false)
+          onChange(value)
+        }}
+      />
     </div>
   )
 }

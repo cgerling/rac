@@ -2,10 +2,11 @@
   position: relative;
 }
 
-.Volume__toggle {
-  
-}
-
 .Volume__slider {
+  display: none;
   position: absolute;
+} 
+
+.Volume__slider_active {
+  display: block;
 }
