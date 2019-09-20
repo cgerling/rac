@@ -49,3 +49,7 @@
 .PortalPlayer__overlay {
   background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.55))
 }
+
+.PortalPlayer__skip-time {
+  font-size: 25px;
+}

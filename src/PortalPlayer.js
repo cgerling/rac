@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { cn } from './utils/classNames'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
-import Button from './components/Button/Button'
 import Selector from './components/Selector/Selector'
 import Volume from './components/Volume/Volume'
 import Progress from './components/Progress/Progress'
+import SkipTime from './components/SkipTime/SkipTime'
 
 import './PortalPlayer.css'
 
@@ -78,14 +78,11 @@ const Portal = ({
       />
       <Overlay className="PortalPlayer__overlay">
         <div className="PortalPlayer__playback">
-          <Button
-            className="PortalPlayer__backward-time"
-            onClick={() => {
-              videoRef.current.currentTime -= 5
-            }}
-          >
-            <FontAwesomeIcon icon="undo-alt" />
-          </Button>
+          <SkipTime.Backward 
+            className="PortalPlayer__skip-time"
+            skip={5} 
+            onClick={time => videoRef.current.currentTime += time} 
+          />
           <ToggleButton
             className="PortalPlayer__playback-button"
             value={() => videoRef.current && !videoRef.current.paused}
@@ -105,14 +102,11 @@ const Portal = ({
               return <FontAwesomeIcon icon="pause" />
             }}
           </ToggleButton>
-          <Button
-            className="PortalPlayer__forward-time"
-            onClick={() => {
-              videoRef.current.currentTime += 5
-            }}
-          >
-            <FontAwesomeIcon icon="redo-alt" />
-          </Button>
+          <SkipTime.Forward 
+            className="PortalPlayer__skip-time"
+            skip={5}
+            onClick={time => videoRef.current.currentTime += time}
+          />
         </div>
         <div className="PortalPlayer__controls">
           <Selector 
