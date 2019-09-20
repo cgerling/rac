@@ -12,22 +12,20 @@
   pointer-events: none;
 }
 
+.PortalPlayer__overlay {
+  background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.55))
+}
+
 .PortalPlayer__playback {
   align-items: center;
   box-sizing: border-box;
   display: flex;
   justify-content: space-evenly;
-  left: 50%;
   padding: 0 10%;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: 0 0;
+  transform: translateY(-50%);
   width: 100%;
-}
-
-.PortalPlayer__playback-button {
-  font-size: 50px;
 }
 
 .PortalPlayer__controls {
@@ -39,15 +37,15 @@
   padding: 0 10% 20px;
   position: absolute;
   width: 100%;
-  z-index: 3;
+  z-index: 2;
+}
+
+.PortalPlayer__playback-button {
+  font-size: 50px;
 }
 
 .PortalPlayer__progress-bar {
   flex-grow: 1;
-}
-
-.PortalPlayer__overlay {
-  background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.55))
 }
 
 .PortalPlayer__skip-time {
