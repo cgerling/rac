@@ -26,6 +26,10 @@
   width: 100%;
 }
 
+.PortalPlayer__playback-button {
+  font-size: 50px;
+}
+
 .PortalPlayer__controls {
   align-items: center;
   bottom: 0;
