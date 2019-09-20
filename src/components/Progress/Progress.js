@@ -10,6 +10,7 @@ const Progress = ({
   initial,
   time,
   duration,
+  onSkip = () => {}
 }) => {
   time = evaluate(time || initial)
   duration = evaluate(duration)
@@ -17,7 +18,14 @@ const Progress = ({
   return (
     <div className={cn('Progress', {}, className)}>
       <div className="Progress__time">{format(time)}</div>
-      <div className="Progress__track">
+      <div 
+        className="Progress__track" 
+        onClick={(e) => {
+          const scrubWidth = e.pageX - e.currentTarget.offsetLeft
+          const newPercent = scrubWidth / e.currentTarget.offsetWidth
+          onSkip(newPercent)
+        }}
+      >
         {/* <div className="Progress__thumb"></div> */}
         <div className="Progress__scrubbed" style={{ width: `${(time / duration) * 100}%` }}></div>
       </div>
