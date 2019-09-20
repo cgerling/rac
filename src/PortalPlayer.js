@@ -130,6 +130,7 @@ const Portal = ({
             initial={0}
             time={currentTime}
             duration={duration}
+            onSkip={(percent) => videoRef.current.currentTime = percent * duration}
           />
           <Volume
             className="PortalPlayer__volume"
