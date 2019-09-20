@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { cn } from './utils/classNames'
-import { Maximize, Minimize, Play, Pause, ChevronsLeft, ChevronsRight, MessageSquare } from 'react-feather'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
 import Button from './components/Button/Button'
@@ -84,7 +84,7 @@ const Portal = ({
               videoRef.current.currentTime -= 5
             }}
           >
-            <ChevronsLeft />
+            <FontAwesomeIcon icon="undo-alt" />
           </Button>
           <ToggleButton
             className="PortalPlayer__playback-button"
@@ -98,12 +98,11 @@ const Portal = ({
             }}
           >
             {(active) => {
-              const size = 48
               if (!active) {
-                return <Play fill="currentColor" size={size} />
+                return <FontAwesomeIcon icon="play" />
               }
 
-              return <Pause fill="currentColor" size={size} />
+              return <FontAwesomeIcon icon="pause" />
             }}
           </ToggleButton>
           <Button
@@ -112,7 +111,7 @@ const Portal = ({
               videoRef.current.currentTime += 5
             }}
           >
-            <ChevronsRight />
+            <FontAwesomeIcon icon="redo-alt" />
           </Button>
         </div>
         <div className="PortalPlayer__controls">
@@ -123,7 +122,7 @@ const Portal = ({
             value="off"
             onChange={(value) => setSubtitle(value)}
           >
-            <MessageSquare />
+            <FontAwesomeIcon icon="comment-alt" />
           </Selector>
           <Progress 
             className="PortalPlayer__progress-bar"
@@ -153,10 +152,10 @@ const Portal = ({
           >
             {(active) => {
               if (!active) {
-                return <Maximize />
+                return <FontAwesomeIcon icon="expand" />
               }
 
-              return <Minimize />
+              return <FontAwesomeIcon icon="compress" />
             }}
           </ToggleButton>
         </div>

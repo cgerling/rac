@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Volume as VolumeIcon, Volume1, Volume2, VolumeX } from 'react-feather'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import cn from '../../utils/classNames'
 import { evaluate } from '../../utils/props'
 import ToggleButton from '../ToggleButton/ToggleButton'
@@ -32,16 +32,16 @@ const Volume = ({
         }}
       >
         {(active) => {
-          let icon = <Volume2 />
+          let icon = 'volume-up'
           if (!active) {
-            icon = <VolumeX />
+            icon = 'volume-mute'
           } else if (value <= 30) {
-            icon = <VolumeIcon />
+            icon = 'volume-off'
           } else if (value > 30 && value <= 60) {
-            icon = <Volume1 />
+            icon = 'volume-down'
           }
 
-          return icon
+          return <FontAwesomeIcon fixedWidth icon={icon} />
         }}
       </ToggleButton>
       <input 

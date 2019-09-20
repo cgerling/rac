@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Check } from 'react-feather'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import cn from '../../utils/classNames'
 import { evaluate } from '../../utils/props'
 import Button from '../Button/Button'
@@ -40,7 +40,7 @@ const Selector = ({
               onChange(option.value)
             }}
           >
-            {option.value === selected && <Check size={12}/>}
+            {option.value === selected && <FontAwesomeIcon icon="check" />}
             {option.label}
           </div>
         ))}
