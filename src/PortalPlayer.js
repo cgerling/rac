@@ -19,6 +19,10 @@ const Portal = ({
 
   const options = [
     {
+      label: 'Off',
+      value: 'off'
+    },
+    {
       label: 'English',
       value: 'en-us'
     },
@@ -30,6 +34,10 @@ const Portal = ({
       label: 'Português',
       value: 'pt-br'
     },
+    {
+      label: 'Import...',
+      value: 'new'
+    }
   ]
 
   return (
@@ -84,7 +92,9 @@ const Portal = ({
         <div className="PortalPlayer__controls">
           <Selector 
             className="PortalPlayer__subtitles-selector"
+            title="Subtitles"
             options={options} 
+            value="off"
             onChange={(value) => setSubtitle(value)}
           >
             <MessageSquare />
