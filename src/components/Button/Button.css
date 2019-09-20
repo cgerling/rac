@@ -5,6 +5,7 @@
   color: inherit;
   cursor: pointer;
   display: inline-flex;
+  font-size: inherit;
   justify-content: center;
   margin: 0;
   opacity: .6;
