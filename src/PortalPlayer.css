@@ -41,3 +41,7 @@
 .PortalPlayer__progress-bar {
   flex-grow: 1;
 }
+
+.PortalPlayer__overlay {
+  background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.55))
+}

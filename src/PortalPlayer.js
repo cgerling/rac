@@ -76,7 +76,7 @@ const Portal = ({
         ref={videoRef} 
         src={src} 
       />
-      <Overlay>
+      <Overlay className="PortalPlayer__overlay">
         <div className="PortalPlayer__playback">
           <Button
             className="PortalPlayer__backward-time"
