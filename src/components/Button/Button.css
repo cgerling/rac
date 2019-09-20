@@ -8,7 +8,7 @@
   justify-content: center;
   margin: 0;
   opacity: .6;
-  padding: 0;
+  padding: 6px;
   transition: opacity 280ms ease-in-out;
 }
 
