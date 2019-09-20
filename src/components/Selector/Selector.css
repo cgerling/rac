@@ -1,5 +1,4 @@
 .Selector {
-  font-size: .8rem;
   position: relative;
 }
 
@@ -8,6 +7,7 @@
   border-radius: 3px;
   bottom: 100%;
   display: none;
+  font-size: .8rem;
   left: 0;
   padding: 5px;
   position: absolute;
