@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { cn } from './utils/classNames'
 import { Maximize, Minimize, Play, Pause, ChevronsLeft, ChevronsRight, MessageSquare } from 'react-feather'
 import Overlay from './components/Overlay/Overlay'
@@ -6,6 +6,7 @@ import ToggleButton from './components/ToggleButton/ToggleButton'
 import Button from './components/Button/Button'
 import Selector from './components/Selector/Selector'
 import Volume from './components/Volume/Volume'
+import Progress from './components/Progress/Progress'
 
 import './PortalPlayer.css'
 
@@ -15,7 +16,32 @@ const Portal = ({
 }) => {
   const playerRef = useRef(null)
   const videoRef = useRef(null)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
   const [, setSubtitle] = useState(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const updateDuration = () => {
+      setDuration(video.duration)
+    }
+    video.addEventListener('loadedmetadata', updateDuration)
+
+    return () => video.removeEventListener('loadedmetadata', updateDuration)
+  }, [setDuration])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const updateTime = () => {
+      setCurrentTime(video.currentTime)
+    }
+    video.addEventListener('timeupdate', updateTime)
+    return () => video.removeEventListener('timeupdate', updateTime)
+  }, [currentTime, setCurrentTime])
 
   const options = [
     {
@@ -99,6 +125,12 @@ const Portal = ({
           >
             <MessageSquare />
           </Selector>
+          <Progress 
+            className="PortalPlayer__progress-bar"
+            initial={0}
+            time={currentTime}
+            duration={duration}
+          />
           <Volume
             className="PortalPlayer__volume"
             onChange={(level) => {

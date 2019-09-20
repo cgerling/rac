@@ -37,3 +37,7 @@
   width: 100%;
   z-index: 3;
 }
+
+.PortalPlayer__progress-bar {
+  flex-grow: 1;
+}
