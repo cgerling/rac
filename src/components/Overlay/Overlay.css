@@ -8,6 +8,8 @@
 
 .Overlay__container {
   display: none;
+  height: 100%;
+  width: 100%;
 }
 
 .Overlay__container_active {
