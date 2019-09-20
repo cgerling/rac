@@ -3,14 +3,14 @@
 }
 
 .Volume__slider {
-  bottom: 0;
   display: none;
-  left: 0;
+  left: 50%;
   position: absolute;
-  transform: rotate(-90deg);
+  top: 0;
+  transform: rotate(-90deg) translateY(-50%);
   transform-origin: 0 0;
-  width: 80px;
-} 
+  width: 60px;
+}
 
 .Volume__slider_active {
   display: block;
