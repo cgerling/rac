@@ -94,7 +94,7 @@ const Portal = ({
                 return videoRef.current.pause()
               }
               
-              return videoRef.current.play().then(console.info.bind(console), console.error.bind(console))
+              return videoRef.current.play()
             }}
           >
             {(active) => {
