@@ -1,5 +1,7 @@
 import React from 'react';
 import PortalPlayer from './PortalPlayer'
+
+import './FontAwesome'
 import './App.css';
 
 function App() {
