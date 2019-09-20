@@ -1,13 +1,17 @@
 .Selector {
+  font-size: .8rem;
   position: relative;
 }
 
 .Selector__list {
-  background: #000000cc;
+  background: #393939;
+  border-radius: 3px;
   bottom: 100%;
   display: none;
   left: 0;
+  padding: 5px;
   position: absolute;
+  text-align: left;
   top: auto;
 }
 
@@ -15,10 +19,26 @@
   display: block;
 }
 
+.Selector__list-title {
+  cursor: default;
+  font-size: .85em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .Selector__list-item {
+  align-items: center;
   color: white;
+  display: flex;
+  font-size: 1em;
+  justify-content: flex-start;
+  margin-left: 12px;
+}
+
+.Selector__list-item:hover {
+  text-decoration: underline;
 }
 
 .Selector__list-item_selected {
-  background: #000000;
+  margin-left: 0;
 }

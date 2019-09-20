@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Check } from 'react-feather'
 import cn from '../../utils/classNames'
 import { evaluate } from '../../utils/props'
 import Button from '../Button/Button'
@@ -10,7 +11,8 @@ const Selector = ({
   className,
   options = [], 
   onChange = () => {},
-  value = null
+  value = null,
+  title
 }) => {
   const [active, setActive] = useState(false)
   const [selected, setSelected] = useState(evaluate(value))
@@ -24,6 +26,7 @@ const Selector = ({
     >
       {children}
       <div className={cn('Selector__list', { active })}>
+        <div className="Selector__list-title">{title}</div>
         {options.map(option => (
           <div
             key={option.value}
@@ -37,6 +40,7 @@ const Selector = ({
               onChange(option.value)
             }}
           >
+            {option.value === selected && <Check size={12}/>}
             {option.label}
           </div>
         ))}
