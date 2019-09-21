@@ -4,7 +4,7 @@ const FILL_TEMPLATE = '00'
 
 const hours = (time) => Math.floor(time / SECONDS_IN_HOUR)
 const minutes = (time) => Math.floor(time / SECONDS_IN_MINUTE)
-const seconds = (time) => Math.floor(time % SECONDS_IN_MINUTE)
+const seconds = (time) => Math.round(time % SECONDS_IN_MINUTE)
 
 const fill = (time) => {
   const value = time.toString()
