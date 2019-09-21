@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import cn from '../../utils/classNames'
 import { evaluate } from '../../utils/props'
 import Button from '../Button/Button'
+import SelectList from '../SelectList/SelectList'
 
 import './Selector.css'
 
@@ -14,8 +14,8 @@ const Selector = ({
   value = null,
   title
 }) => {
+  value = evaluate(value)
   const [active, setActive] = useState(false)
-  const [selected, setSelected] = useState(evaluate(value))
 
   return (
     <Button
@@ -25,31 +25,24 @@ const Selector = ({
       onPointerLeave={() => setActive(false)}
     >
       {children}
-      <div className={cn('Selector__list', { active })}>
-        <div className="Selector__list-title">{title}</div>
-        <ul className="Selector__list-options">
-          {options.map(option => {
-            const active = option.value === selected
-            return (
-              <div
-              key={option.value}
-              className={cn(
-                'Selector__option-item',
-                { active }
-              )}
-              onClick={() => {
-                setActive(false)
-                setSelected(option.value)
-                onChange(option.value)
-              }}
-            >
-              {active && <FontAwesomeIcon size="xs" icon="check" style={{ marginRight: '2px' }} />}
-              {option.label}
-            </div>
-            )
-          })}
-        </ul>
-      </div>
+      <SelectList 
+        className={cn('Selector__list', { active })} 
+        name={title} 
+        value={value}
+        onChange={value => {
+          setActive(false)
+          onChange(value)
+        }}
+      >
+        {options.map(option => (
+          <SelectList.Item 
+            key={option.value} 
+            value={option.value}
+          >
+            {option.label}
+          </SelectList.Item>
+        ))}
+      </SelectList>
     </Button>
   )
 }

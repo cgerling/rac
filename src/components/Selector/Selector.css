@@ -7,9 +7,8 @@
   border-radius: 3px;
   bottom: 100%;
   display: none;
-  font-size: .8rem;
-  left: 0;
-  padding: 5px 10px;
+  font-size: .85rem;
+  left: -25%;
   position: absolute;
   text-align: left;
   top: auto;
@@ -17,33 +16,4 @@
 
 .Selector__list_active {
   display: block;
-}
-
-.Selector__list-title {
-  cursor: default;
-  font-size: .85em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.Selector__list-options {
-  padding: 0;
-  margin: 0;
-}
-
-.Selector__option-item {
-  align-items: center;
-  color: #ffffff;
-  display: flex;
-  font-size: 1em;
-  justify-content: flex-start;
-  margin-left: 12px;
-}
-
-.Selector__option-item:hover {
-  text-decoration: underline;
-}
-
-.Selector__option-item_active {
-  margin-left: 0;
 }
