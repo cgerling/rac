@@ -1,0 +1,50 @@
+.SelectList {
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.SelectList__name {
+  cursor: default;
+  font-size: .8em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.SelectList__items {
+  font-size: .95em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.SelectList__check {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.SelectList__item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: .9em;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.SelectList__item:hover {
+  text-decoration: underline;
+}
+
+.SelectList__item_selected {
+  padding-left: 0;
+}
+
+.SelectList__item_disabled {
+  cursor: default;
+  opacity: .8;
+  pointer-events: none;
+}
