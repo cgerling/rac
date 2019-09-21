@@ -6,7 +6,7 @@ import ToggleButton from './components/ToggleButton/ToggleButton'
 import Selector from './components/Selector/Selector'
 import Volume from './components/Volume/Volume'
 import Progress from './components/Progress/Progress'
-import SkipTime from './components/SkipTime/SkipTime'
+import TimeJump from './components/TimeJump/TimeJump'
 
 import './PortalPlayer.css'
 
@@ -78,9 +78,9 @@ const Portal = ({
       />
       <Overlay className="PortalPlayer__overlay">
         <div className="PortalPlayer__playback">
-          <SkipTime.Backward 
+          <TimeJump.Backward 
             className="PortalPlayer__skip-time"
-            skip={5} 
+            time={5} 
             onClick={time => videoRef.current.currentTime += time} 
           />
           <ToggleButton
@@ -102,9 +102,9 @@ const Portal = ({
               return <FontAwesomeIcon icon="pause" />
             }}
           </ToggleButton>
-          <SkipTime.Forward 
+          <TimeJump.Forward 
             className="PortalPlayer__skip-time"
-            skip={5}
+            time={5}
             onClick={time => videoRef.current.currentTime += time}
           />
         </div>

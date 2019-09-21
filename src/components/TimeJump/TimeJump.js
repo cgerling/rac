@@ -3,29 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { cn } from '../../utils/classNames'
 import Button from '../Button/Button'
 
-const SkipTime = ({
+const TimeJump = ({
   className,
   icon,
   onClick = () => {},
   rotation,
-  skip,
+  time,
 }) => {
   return (
     <Button
-      className={cn('SkipTime', {}, className)}
-      onClick={() => onClick(skip)}
+      className={cn('TimeJump', {}, className)}
+      onClick={() => onClick(time)}
     >
       <FontAwesomeIcon icon={icon} transform={`rotate-${rotation}`} />
     </Button>
   )
 }
 
-const Forward = ({ skip, ...props}) => (
-  <SkipTime {...props} icon="redo-alt" rotation={-45} skip={skip} />
+const Forward = ({ time, ...props}) => (
+  <TimeJump {...props} icon="redo-alt" rotation={-45} time={time} />
 )
 
-const Backward = ({ skip, ...props}) => (
-  <SkipTime {...props} icon="undo-alt" rotation={45} skip={skip * -1} />
+const Backward = ({ time, ...props}) => (
+  <TimeJump {...props} icon="undo-alt" rotation={45} time={time * -1} />
 )
 
 export default {
