@@ -40,3 +40,43 @@
   position: absolute;
   top: 0;
 }
+
+.Progress__hover-track {
+  height: 100%;
+  left: 0;
+  padding: 18px 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.Progress__hover-info {
+  display: none;
+  position: absolute;
+}
+
+.Progress__hover-info_visible {
+  display: block;
+}
+
+.Progress__hover-notch {
+  background: #fff;
+  height: 5px;
+  width: 2px;
+}
+
+.Progress__hover-notch_inverted {
+  background: #000;
+}
+
+.Progress__hover-time {
+  background: #000a;
+  border-radius: 4px;
+  bottom: 0;
+  font-size: .7em;
+  padding: 5px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
