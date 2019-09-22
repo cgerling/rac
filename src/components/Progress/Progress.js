@@ -1,61 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cn from '../../utils/classNames'
-import { evaluate } from '../../utils/props'
 import { format } from '../../utils/time'
+import { evaluate } from '../../utils/props'
+import TimeLine from '../TimeLine/TimeLine'
 
 import './Progress.css'
 
-const toPercentage = (value, of) => ((value / of) * 100) + '%'
-
-const mouseDistance = (e) => {
-  const { left, width } = e.target.getBoundingClientRect()
-  let mousePosition = e.pageX - left
-  if (mousePosition > width) {
-    mousePosition = width
-  }
-
-  return mousePosition / width
-}
-
 const Progress = ({
   className,
-  initial,
   time,
   duration,
-  onSkip = () => {}
+  onSkip,
 }) => {
-  time = evaluate(time || initial)
+  time = evaluate(time)
   duration = evaluate(duration)
-
-  const [hover, setHover] = useState({ show: false, time: 0 })
 
   return (
     <div className={cn('Progress', {}, className)}>
       <div className="Progress__time">{format(time)}</div>
-      <div className="Progress__track">
-        <div 
-          className={cn("Progress__hover-track", { active: hover.show })}
-          onClick={(e) => onSkip(hover.time)}
-          onMouseEnter={() => setHover(hover => ({ ...hover, show: true }))}
-          onMouseMove={(e) => {
-            const distance = mouseDistance(e)
-            const time = distance * duration
-            setHover(hover => ({ ...hover, time }))
-          }}
-          onMouseLeave={() => setHover(hover => ({ ...hover, show: false }))}
-        >
-          <div 
-            className={cn('Progress__hover-info', { visible: hover.show })}
-            style={{ left: toPercentage(hover.time, duration) }}
-          >
-            <div className={cn('Progress__hover-notch', { inverted: hover.time < time })} />
-            <div className="Progress__hover-time">
-              {format(hover.time)}
-            </div>
-          </div>
-        </div>
-        <div className="Progress__scrubbed" style={{ width: toPercentage(time, duration) }}></div>
-      </div>
+      <TimeLine 
+        className="Progress__track" 
+        onSkip={onSkip} 
+        time={time} 
+        duration={duration} 
+      />
       <div className="Progress__time">-{format(duration - time)}</div>
     </div>
   )

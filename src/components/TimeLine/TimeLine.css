@@ -1,0 +1,58 @@
+.TimeLine__track {
+  background: #ffffff55;
+  border-radius: 10px;
+  height: 5px;
+  position: relative;
+  width: 100%;
+}
+
+.TimeLine__scrubbed {
+  background: #fff;
+  border-radius: inherit;
+  bottom: 0;
+  left: 0;
+  min-width: 4px;
+  position: absolute;
+  top: 0;
+}
+
+.TimeLine__hover-track {
+  height: 100%;
+  left: 0;
+  padding: 18px 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.TimeLine__hover-info {
+  display: none;
+  position: absolute;
+}
+
+.TimeLine__hover-info_visible {
+  display: block;
+}
+
+.TimeLine__hover-notch {
+  background: #fff;
+  height: 5px;
+  width: 2px;
+}
+
+.TimeLine__hover-notch_inverted {
+  background: #000;
+  width: 3px;
+}
+
+.TimeLine__hover-time {
+  background: #000a;
+  border-radius: 4px;
+  bottom: 0;
+  font-size: .7em;
+  padding: 5px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
