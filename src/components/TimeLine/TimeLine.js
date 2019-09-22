@@ -7,7 +7,7 @@ import './TimeLine.css'
 const toPercentage = (value, of) => ((value / of) * 100) + '%'
 
 const mouseDistance = (e) => {
-  const { left, width } = e.target.getBoundingClientRect()
+  const { left, width } = e.currentTarget.getBoundingClientRect()
   let mousePosition = e.pageX - left
   if (mousePosition > width) {
     mousePosition = width
