@@ -20,17 +20,6 @@
   position: relative;
 }
 
-.Progress__thumb {
-  background: white;
-  border-radius: 50%;
-  height: 10px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  z-index: 2;
-}
-
 .Progress__scrubbed {
   background: #fff;
   border-radius: inherit;

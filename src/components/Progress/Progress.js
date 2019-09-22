@@ -54,7 +54,6 @@ const Progress = ({
             </div>
           </div>
         </div>
-        {/* <div className="Progress__thumb"></div> */}
         <div className="Progress__scrubbed" style={{ width: toPercentage(time, duration) }}></div>
       </div>
       <div className="Progress__time">-{format(duration - time)}</div>
