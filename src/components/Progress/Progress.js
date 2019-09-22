@@ -32,15 +32,10 @@ const Progress = ({
   return (
     <div className={cn('Progress', {}, className)}>
       <div className="Progress__time">{format(time)}</div>
-      <div 
-        className="Progress__track" 
-        onClick={(e) => {
-          const distance = mouseDistance(e)
-          onSkip(distance)
-        }}
-      >
+      <div className="Progress__track">
         <div 
           className={cn("Progress__hover-track", { active: hover.show })}
+          onClick={(e) => onSkip(hover.time)}
           onMouseEnter={() => setHover(hover => ({ ...hover, show: true }))}
           onMouseMove={(e) => {
             const distance = mouseDistance(e)
