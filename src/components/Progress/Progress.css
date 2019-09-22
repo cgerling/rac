@@ -69,6 +69,7 @@
 
 .Progress__hover-notch_inverted {
   background: #000;
+  width: 3px;
 }
 
 .Progress__hover-time {
