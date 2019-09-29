@@ -23,4 +23,9 @@ module.exports = {
   rules: {
     'react/prop-types': 'warn',
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }
