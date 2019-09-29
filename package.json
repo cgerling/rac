@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "format": "prettier --write src/**/*.{js,css}",
+    "lint": "eslint src/",
     "build": "rollup -c"
   },
   "files": [
