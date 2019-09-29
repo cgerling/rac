@@ -1,7 +1,10 @@
+@import url('https://rsms.me/inter/inter.css');
+
 .PortalPlayer {
   align-items: center;
   color: white;
   display: inline-flex;
+  font-family: "Inter";
   font-size: 0;
   justify-content: center;
   position: relative;
