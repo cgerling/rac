@@ -3,21 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "main": "dist/index.js",
-  "style": "dist/styles.css",
+  "scripts": {
+    "build": "rollup -c"
+  },
   "files": [
     "dist"
   ],
+  "author": "Calvin Gerling <calvin.gerling@singlebit.org>",
+  "license": "",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
     "@fortawesome/free-solid-svg-icons": "^5.11.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.6",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
     "react-feather": "^2.0.3"
-  },
-  "scripts": {
-    "build": "rollup -c"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -29,5 +28,17 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calvingerling/portal-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/calvingerling/portal-player/issues"
+  },
+  "homepage": "https://github.com/calvingerling/portal-player#readme"
 }
