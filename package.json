@@ -2,6 +2,11 @@
   "name": "portal-player",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/index.js",
+  "style": "dist/styles.css",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
     "@fortawesome/free-solid-svg-icons": "^5.11.1",
@@ -12,5 +17,17 @@
     "react-feather": "^2.0.3"
   },
   "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "postcss-modules": "^1.4.1",
+    "rollup": "^1.22.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3"
   }
 }
