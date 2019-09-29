@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "format": "prettier --write src/**/*.{js,css}",
-    "lint": "eslint src/",
+    "lint:js": "eslint src/",
+    "lint:css": "stylelint src/**/*.css",
+    "lint": "yarn run lint:js; yarn run lint:css",
     "storybook": "start-storybook -p 6001",
     "storybook:build": "build-storybook",
     "build": "rollup -c && yarn run storybook:build"

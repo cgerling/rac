@@ -4,7 +4,12 @@
     "eslint --fix",
     "git add"
   ],
-  "**/*.{css,json}": [
+  "**/*.css": [
+    "prettier --write",
+    "stylelint --fix",
+    "git add"
+  ],
+  "**/*.json": [
     "prettier --write",
     "git add"
   ]
