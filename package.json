@@ -4,7 +4,7 @@
   "private": true,
   "main": "dist/index.js",
   "scripts": {
-    "format": "prettier --write src/**/*.{js,css}",
+    "format": "prettier --write **/*.{js,css,json}",
     "lint:js": "eslint src/",
     "lint:css": "stylelint src/**/*.css",
     "lint": "yarn run lint:js; yarn run lint:css",
