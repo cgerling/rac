@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { cn } from './utils/classNames'
+import React, {useRef, useState, useEffect} from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {cn} from './utils/classNames'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
 import Selector from './components/Selector/Selector'
@@ -10,10 +10,7 @@ import TimeJump from './components/TimeJump/TimeJump'
 
 import './PortalPlayer.css'
 
-const Portal = ({
-  className,
-  src,
-}) => {
+const Portal = ({className, src}) => {
   const playerRef = useRef(null)
   const videoRef = useRef(null)
   const [currentTime, setCurrentTime] = useState(0)
@@ -46,55 +43,48 @@ const Portal = ({
   const options = [
     {
       label: 'Off',
-      value: 'off'
+      value: 'off',
     },
     {
       label: 'English',
-      value: 'en-us'
+      value: 'en-us',
     },
     {
       label: 'Spanish',
-      value: 'es-es'
+      value: 'es-es',
     },
     {
       label: 'Português',
-      value: 'pt-br'
+      value: 'pt-br',
     },
     {
       label: 'Import...',
-      value: 'new'
-    }
+      value: 'new',
+    },
   ]
 
   return (
-    <div 
-      className={cn('PortalPlayer', className)}
-      ref={playerRef}
-    >
-      <video 
-        className="PortalPlayer__video"
-        ref={videoRef} 
-        src={src} 
-      />
+    <div className={cn('PortalPlayer', className)} ref={playerRef}>
+      <video className="PortalPlayer__video" ref={videoRef} src={src} />
       <Overlay className="PortalPlayer__overlay">
         <div className="PortalPlayer__playback">
-          <TimeJump.Backward 
+          <TimeJump.Backward
             className="PortalPlayer__skip-time"
-            time={5} 
-            onClick={time => videoRef.current.currentTime += time} 
+            time={5}
+            onClick={time => (videoRef.current.currentTime += time)}
           />
           <ToggleButton
             className="PortalPlayer__playback-button"
             value={() => videoRef.current && !videoRef.current.paused}
-            onChange={(active) => {
+            onChange={active => {
               if (!active) {
                 return videoRef.current.pause()
               }
-              
+
               return videoRef.current.play()
             }}
           >
-            {(active) => {
+            {active => {
               if (!active) {
                 return <FontAwesomeIcon icon="play" />
               }
@@ -102,32 +92,32 @@ const Portal = ({
               return <FontAwesomeIcon icon="pause" />
             }}
           </ToggleButton>
-          <TimeJump.Forward 
+          <TimeJump.Forward
             className="PortalPlayer__skip-time"
             time={5}
-            onClick={time => videoRef.current.currentTime += time}
+            onClick={time => (videoRef.current.currentTime += time)}
           />
         </div>
         <div className="PortalPlayer__controls">
-          <Selector 
+          <Selector
             className="PortalPlayer__subtitles-selector"
             title="Subtitles"
-            options={options} 
+            options={options}
             value="off"
-            onChange={(value) => setSubtitle(value)}
+            onChange={value => setSubtitle(value)}
           >
             <FontAwesomeIcon icon="comment-alt" />
           </Selector>
-          <Progress 
+          <Progress
             className="PortalPlayer__progress-bar"
             initial={0}
             time={currentTime}
             duration={duration}
-            onSkip={(time) => videoRef.current.currentTime = time}
+            onSkip={time => (videoRef.current.currentTime = time)}
           />
           <Volume
             className="PortalPlayer__volume"
-            onChange={(level) => {
+            onChange={level => {
               const volume = level / 100
               videoRef.current.volume = volume
               videoRef.current.muted = volume === 0
@@ -136,15 +126,15 @@ const Portal = ({
           <ToggleButton
             className="PortalPlayer__screen-toggle"
             initial={document.fullscreenElement}
-            onChange={(active) => {
+            onChange={active => {
               if (!active) {
                 return document.exitFullscreen()
               }
-              
-              return playerRef.current.requestFullscreen({ navigationUI: 'hide' })
+
+              return playerRef.current.requestFullscreen({navigationUI: 'hide'})
             }}
           >
-            {(active) => {
+            {active => {
               if (!active) {
                 return <FontAwesomeIcon icon="expand" />
               }

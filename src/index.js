@@ -1,1 +1,1 @@
-export { default } from './PortalPlayer'
+export {default} from './PortalPlayer'
