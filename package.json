@@ -6,6 +6,7 @@
   "scripts": {
     "format": "prettier --write src/**/*.{js,css}",
     "lint": "eslint src/",
+    "storybook": "start-storybook -p 6001",
     "build": "rollup -c"
   },
   "files": [
@@ -24,6 +25,8 @@
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^5.2.1",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.5.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
