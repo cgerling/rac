@@ -5,7 +5,7 @@
 
 .SelectList__name {
   cursor: default;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: bold;
   padding: 0;
   margin: 0;
@@ -15,7 +15,7 @@
 }
 
 .SelectList__items {
-  font-size: .95em;
+  font-size: 0.95em;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -30,7 +30,7 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  font-size: .9em;
+  font-size: 0.9em;
   justify-content: flex-start;
   padding-left: 15px;
 }
@@ -45,6 +45,6 @@
 
 .SelectList__item_disabled {
   cursor: default;
-  opacity: .8;
+  opacity: 0.8;
   pointer-events: none;
 }

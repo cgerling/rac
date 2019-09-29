@@ -1,8 +1,8 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
+import {library} from '@fortawesome/fontawesome-svg-core'
 import * as icon from '@fortawesome/free-solid-svg-icons'
 
 library.add(
-  icon.faPlay, 
+  icon.faPlay,
   icon.faPause,
   icon.faExpand,
   icon.faCompress,
