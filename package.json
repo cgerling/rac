@@ -7,7 +7,8 @@
     "format": "prettier --write src/**/*.{js,css}",
     "lint": "eslint src/",
     "storybook": "start-storybook -p 6001",
-    "build": "rollup -c"
+    "storybook:build": "build-storybook",
+    "build": "rollup -c && yarn run storybook:build"
   },
   "files": [
     "dist"
@@ -26,6 +27,7 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@storybook/react": "^5.2.1",
+    "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "eslint": "^6.5.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -38,7 +40,8 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3"
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-uglify": "^6.0.3"
   },
   "peerDependencies": {
     "react": "^16.9.0",
