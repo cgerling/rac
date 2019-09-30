@@ -15,7 +15,7 @@ export default {
     format: 'cjs',
     sourcemap: true,
   },
-  external: ['react', 'react-dom'],
+  external: ['react'],
   plugins: [
     resolve(),
     postcss({
