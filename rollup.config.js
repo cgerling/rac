@@ -15,15 +15,7 @@ export default {
     format: 'cjs',
     sourcemap: true,
   },
-  external: [
-    '@fortawesome/fontawesome-svg-core',
-    '@fortawesome/free-solid-svg-icons',
-    '@fortawesome/react-fontawesome',
-    'classnames',
-    'react',
-    'react-dom',
-    'react-feather',
-  ],
+  external: ['react', 'react-dom'],
   plugins: [
     resolve(),
     postcss({
