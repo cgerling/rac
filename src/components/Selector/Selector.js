@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import cn from '../../utils/classNames'
-import { evaluate } from '../../utils/props'
+import {evaluate} from '../../utils/props'
 import Button from '../Button/Button'
 import SelectList from '../SelectList/SelectList'
 
 import './Selector.css'
 
-const Selector = ({ 
+const Selector = ({
   children,
   className,
-  options = [], 
+  options = [],
   onChange = () => {},
   value = null,
-  title
+  title,
 }) => {
   value = evaluate(value)
   const [active, setActive] = useState(false)
@@ -25,9 +25,9 @@ const Selector = ({
       onPointerLeave={() => setActive(false)}
     >
       {children}
-      <SelectList 
-        className={cn('Selector__list', { active })} 
-        name={title} 
+      <SelectList
+        className={cn('Selector__list', {active})}
+        name={title}
         value={value}
         onChange={value => {
           setActive(false)
@@ -35,10 +35,7 @@ const Selector = ({
         }}
       >
         {options.map(option => (
-          <SelectList.Item 
-            key={option.value} 
-            value={option.value}
-          >
+          <SelectList.Item key={option.value} value={option.value}>
             {option.label}
           </SelectList.Item>
         ))}

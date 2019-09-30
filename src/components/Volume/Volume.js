@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import FontAwesomeIcon from '../Icon/Icon'
 import cn from '../../utils/classNames'
-import { evaluate } from '../../utils/props'
+import {evaluate} from '../../utils/props'
 import ToggleButton from '../ToggleButton/ToggleButton'
 
 import './Volume.css'
 
-const Volume = ({ 
-  initial = 100,
-  onChange = () => {},
-}) => {
+const Volume = ({initial = 100, onChange = () => {}}) => {
   const [open, setOpen] = useState(false)
   const [level, setLevel] = useState(evaluate(initial))
   const [muted, setMuted] = useState(false)
@@ -21,17 +18,17 @@ const Volume = ({
       onPointerEnter={() => setOpen(true)}
       onPointerLeave={() => setOpen(false)}
     >
-      <ToggleButton 
+      <ToggleButton
         className="Volume__toggle"
         value={() => value}
-        onChange={(active) => {
+        onChange={active => {
           const muted = !active
           setMuted(muted)
           const value = muted ? 0 : level
           onChange(value)
         }}
       >
-        {(active) => {
+        {active => {
           let icon = 'volume-up'
           if (!active) {
             icon = 'volume-mute'
@@ -44,14 +41,14 @@ const Volume = ({
           return <FontAwesomeIcon fixedWidth icon={icon} />
         }}
       </ToggleButton>
-      <input 
-        className={cn('Volume__slider', { active: open })}
+      <input
+        className={cn('Volume__slider', {active: open})}
         type="range"
         step="1"
         min="0"
         max="100"
         value={value}
-        onChange={(e) => {
+        onChange={e => {
           value = Number.parseInt(e.target.value, 10)
           setLevel(value)
           setMuted(false)
