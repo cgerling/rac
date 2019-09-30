@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import FontAwesomeIcon from './components/Icon/Icon'
 import {cn} from './utils/classNames'
 import Overlay from './components/Overlay/Overlay'
 import ToggleButton from './components/ToggleButton/ToggleButton'
