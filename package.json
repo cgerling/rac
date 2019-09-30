@@ -10,7 +10,9 @@
     "lint": "yarn run lint:js; yarn run lint:css",
     "storybook": "start-storybook -p 6001",
     "storybook:build": "build-storybook",
-    "build": "rollup -c && yarn run storybook:build"
+    "build": "rollup -c && yarn run storybook:build",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "files": [
     "dist"
@@ -32,9 +34,12 @@
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "eslint": "^6.5.0",
+    "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.7",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
     "lint-staged": "^9.4.0",
     "postcss-modules": "^1.4.1",
     "prettier": "1.18.2",
