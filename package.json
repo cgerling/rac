@@ -24,7 +24,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
     "@fortawesome/free-solid-svg-icons": "^5.11.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -44,6 +45,8 @@
     "lint-staged": "^9.4.0",
     "postcss-modules": "^1.4.1",
     "prettier": "1.18.2",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
     "react-testing-library": "^8.0.1",
     "rollup": "^1.22.0",
     "rollup-plugin-babel": "^4.3.3",
@@ -52,7 +55,8 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-uglify": "^6.0.3",
     "stylelint": "^11.0.0",
-    "stylelint-config-prettier": "^6.0.0"
+    "stylelint-config-prettier": "^6.0.0",
+    "webpack": "^4.41.0"
   },
   "peerDependencies": {
     "react": "^16.8"
