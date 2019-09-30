@@ -1,5 +1,5 @@
 import React from 'react'
-import FontAwesomeIcon from '../../Icon/Icon'
+import FontAwesomeIcon from '../Icon/Icon'
 import {cn} from '../../utils/classNames'
 import Button from '../Button/Button'
 
