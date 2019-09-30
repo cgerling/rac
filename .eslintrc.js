@@ -11,6 +11,8 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
+    'prettier',
+    'prettier/react',
   ],
   globals: {
     Atomics: 'readonly',
