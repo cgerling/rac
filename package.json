@@ -12,7 +12,8 @@
     "storybook:build": "build-storybook",
     "build": "rollup -c && yarn run storybook:build",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "files": [
     "dist"
