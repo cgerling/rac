@@ -1,8 +1,8 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
+import {library} from '@fortawesome/fontawesome-svg-core'
 import * as icon from '@fortawesome/free-solid-svg-icons'
 
 library.add(
-  icon.faPlay, 
+  icon.faPlay,
   icon.faPause,
   icon.faExpand,
   icon.faCompress,
@@ -15,3 +15,5 @@ library.add(
   icon.faVolumeUp,
   icon.faCheck,
 )
+
+export {FontAwesomeIcon as default} from '@fortawesome/react-fontawesome'

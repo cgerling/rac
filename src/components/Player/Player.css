@@ -1,22 +1,23 @@
-.PortalPlayer {
+.Rac {
   align-items: center;
   color: white;
   display: inline-flex;
+  font-family: 'Inter';
   font-size: 0;
   justify-content: center;
   position: relative;
 }
 
-.PortalPlayer__video {
+.Rac__video {
   flex-grow: 1;
   pointer-events: none;
 }
 
-.PortalPlayer__overlay {
-  background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.55))
+.Rac__overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.55));
 }
 
-.PortalPlayer__playback {
+.Rac__playback {
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -28,7 +29,7 @@
   width: 100%;
 }
 
-.PortalPlayer__controls {
+.Rac__controls {
   align-items: center;
   bottom: 0;
   box-sizing: border-box;
@@ -41,15 +42,15 @@
   z-index: 2;
 }
 
-.PortalPlayer__playback-button {
+.Rac__playback-button {
   font-size: 60px;
 }
 
-.PortalPlayer__progress-bar {
+.Rac__progress-bar {
   flex-grow: 1;
   font-size: 1em;
 }
 
-.PortalPlayer__skip-time {
+.Rac__skip-time {
   font-size: 25px;
 }

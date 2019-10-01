@@ -1,36 +1,74 @@
 {
-  "name": "portal-player",
+  "name": "rac",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "format": "prettier --write **/*.{js,css,json}",
+    "lint:js": "eslint src/",
+    "lint:css": "stylelint src/**/*.css",
+    "lint": "yarn run lint:js; yarn run lint:css",
+    "storybook": "start-storybook -p 6001",
+    "storybook:build": "build-storybook",
+    "build": "rollup -c && yarn run storybook:build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Calvin Gerling <calvin.gerling@singlebit.org>",
+  "license": "LGPL-3.0-or-later",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
     "@fortawesome/free-solid-svg-icons": "^5.11.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.6",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-feather": "^2.0.3",
-    "react-scripts": "3.1.1"
+    "prop-types": "^15.7.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-a11y": "^5.2.1",
+    "@storybook/addon-knobs": "^5.2.1",
+    "@storybook/react": "^5.2.1",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.5.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.7",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.0",
+    "postcss-modules": "^1.4.1",
+    "prettier": "1.18.2",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-testing-library": "^8.0.1",
+    "rollup": "^1.22.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-uglify": "^6.0.3",
+    "stylelint": "^11.0.0",
+    "stylelint-config-prettier": "^6.0.0",
+    "webpack": "^4.41.0"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "peerDependencies": {
+    "react": "^16.8"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calvingerling/rac.git"
+  },
+  "bugs": {
+    "url": "https://github.com/calvingerling/rac/issues"
+  },
+  "homepage": "https://github.com/calvingerling/rac#readme"
 }

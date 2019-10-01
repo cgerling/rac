@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import cn from '../../utils/classNames'
-import { evaluate } from '../../utils/props'
+import {evaluate} from '../../utils/props'
 import './Button.css'
 
 const Button = ({
   focus = false,
-  children, 
+  children,
   className,
   onPointerEnter = () => {},
   onPointerLeave = () => {},
@@ -13,15 +13,15 @@ const Button = ({
 }) => {
   focus = evaluate(focus)
   const [active, setActive] = useState(Boolean(focus))
-  
+
   return (
-    <button 
-      className={cn('Button', { active }, className)}
-      onPointerEnter={(e) => {
+    <button
+      className={cn('Button', {active}, className)}
+      onPointerEnter={e => {
         setActive(true)
         onPointerEnter(e)
       }}
-      onPointerLeave={(e) => {
+      onPointerLeave={e => {
         setActive(false)
         onPointerLeave(e)
       }}
