@@ -64,17 +64,17 @@ const Portal = ({className, src}) => {
   ]
 
   return (
-    <div className={cn('PortalPlayer', className)} ref={playerRef}>
-      <video className="PortalPlayer__video" ref={videoRef} src={src} />
-      <Overlay className="PortalPlayer__overlay">
-        <div className="PortalPlayer__playback">
+    <div className={cn('Rac', className)} ref={playerRef}>
+      <video className="Rac__video" ref={videoRef} src={src} />
+      <Overlay className="Rac__overlay">
+        <div className="Rac__playback">
           <TimeJump.Backward
-            className="PortalPlayer__skip-time"
+            className="Rac__skip-time"
             time={5}
             onClick={time => (videoRef.current.currentTime += time)}
           />
           <ToggleButton
-            className="PortalPlayer__playback-button"
+            className="Rac__playback-button"
             value={() => videoRef.current && !videoRef.current.paused}
             onChange={active => {
               if (!active) {
@@ -93,14 +93,14 @@ const Portal = ({className, src}) => {
             }}
           </ToggleButton>
           <TimeJump.Forward
-            className="PortalPlayer__skip-time"
+            className="Rac__skip-time"
             time={5}
             onClick={time => (videoRef.current.currentTime += time)}
           />
         </div>
-        <div className="PortalPlayer__controls">
+        <div className="Rac__controls">
           <Selector
-            className="PortalPlayer__subtitles-selector"
+            className="Rac__subtitles-selector"
             title="Subtitles"
             options={options}
             value="off"
@@ -109,14 +109,14 @@ const Portal = ({className, src}) => {
             <FontAwesomeIcon icon="comment-alt" />
           </Selector>
           <Progress
-            className="PortalPlayer__progress-bar"
+            className="Rac__progress-bar"
             initial={0}
             time={currentTime}
             duration={duration}
             onSkip={time => (videoRef.current.currentTime = time)}
           />
           <Volume
-            className="PortalPlayer__volume"
+            className="Rac__volume"
             onChange={level => {
               const volume = level / 100
               videoRef.current.volume = volume
@@ -124,7 +124,7 @@ const Portal = ({className, src}) => {
             }}
           />
           <ToggleButton
-            className="PortalPlayer__screen-toggle"
+            className="Rac__screen-toggle"
             initial={document.fullscreenElement}
             onChange={active => {
               if (!active) {

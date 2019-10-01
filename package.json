@@ -1,5 +1,5 @@
 {
-  "name": "portal-player",
+  "name": "rac",
   "version": "0.1.0",
   "private": true,
   "main": "dist/index.js",
@@ -65,10 +65,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/calvingerling/portal-player.git"
+    "url": "https://github.com/calvingerling/rac.git"
   },
   "bugs": {
-    "url": "https://github.com/calvingerling/portal-player/issues"
+    "url": "https://github.com/calvingerling/rac/issues"
   },
-  "homepage": "https://github.com/calvingerling/portal-player#readme"
+  "homepage": "https://github.com/calvingerling/rac#readme"
 }
