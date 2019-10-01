@@ -10,7 +10,7 @@
     "lint": "yarn run lint:js; yarn run lint:css",
     "storybook": "start-storybook -p 6001",
     "storybook:build": "build-storybook",
-    "build": "rollup -c && yarn run storybook:build",
+    "build": "rollup -c",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
