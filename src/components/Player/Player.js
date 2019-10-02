@@ -1,4 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react'
+import PropTypes from 'prop-types'
 import FontAwesomeIcon from '../Icon/Icon'
 import {cn} from '../../utils/classNames'
 import Overlay from '../Overlay/Overlay'
@@ -146,6 +147,11 @@ const Player = ({className, src}) => {
       </Overlay>
     </div>
   )
+}
+
+Player.propTypes = {
+  className: PropTypes.string,
+  src: PropTypes.string.isRequired,
 }
 
 export default Player
