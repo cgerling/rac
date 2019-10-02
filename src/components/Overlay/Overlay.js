@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import cn from '../../utils/classNames'
 import {evaluate} from '../../utils/props'
 import './Overlay.css'
@@ -18,6 +19,12 @@ const Overlay = ({className, children, initial = false}) => {
       </div>
     </div>
   )
+}
+
+Overlay.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+  initial: PropTypes.bool,
 }
 
 export default Overlay

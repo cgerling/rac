@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import FontAwesomeIcon from '../Icon/Icon'
 import cn from '../../utils/classNames'
 import {evaluate} from '../../utils/props'
@@ -57,6 +58,11 @@ const Volume = ({initial = 100, onChange = () => {}}) => {
       />
     </div>
   )
+}
+
+Volume.propTypes = {
+  initial: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+  onChange: PropTypes.func,
 }
 
 export default Volume

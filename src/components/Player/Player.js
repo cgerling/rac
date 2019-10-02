@@ -1,4 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react'
+import PropTypes from 'prop-types'
 import FontAwesomeIcon from '../Icon/Icon'
 import {cn} from '../../utils/classNames'
 import Overlay from '../Overlay/Overlay'
@@ -10,7 +11,7 @@ import TimeJump from '../TimeJump/TimeJump'
 
 import './Player.css'
 
-const Portal = ({className, src}) => {
+const Player = ({className, src}) => {
   const playerRef = useRef(null)
   const videoRef = useRef(null)
   const [currentTime, setCurrentTime] = useState(0)
@@ -148,4 +149,9 @@ const Portal = ({className, src}) => {
   )
 }
 
-export default Portal
+Player.propTypes = {
+  className: PropTypes.string,
+  src: PropTypes.string.isRequired,
+}
+
+export default Player

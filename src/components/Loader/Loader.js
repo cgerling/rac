@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cn from '../../utils/classNames'
 
 import './Loader.css'
@@ -11,6 +12,10 @@ const Loader = ({className}) => {
       </svg>
     </div>
   )
+}
+
+Loader.propTypes = {
+  className: PropTypes.string,
 }
 
 export default Loader

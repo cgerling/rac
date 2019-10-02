@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import cn from '../../utils/classNames'
 import {evaluate} from '../../utils/props'
 import Button from '../Button/Button'
@@ -42,6 +43,15 @@ const Selector = ({
       </SelectList>
     </Button>
   )
+}
+
+Selector.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  options: PropTypes.array,
+  onChange: PropTypes.func,
+  value: PropTypes.oneOfType([PropTypes.any, PropTypes.func]),
+  title: PropTypes.string,
 }
 
 export default Selector

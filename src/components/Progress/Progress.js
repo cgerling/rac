@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cn from '../../utils/classNames'
 import {format} from '../../utils/time'
 import {evaluate} from '../../utils/props'
@@ -22,6 +23,13 @@ const Progress = ({className, time, duration, onSkip}) => {
       <div className="Progress__time">-{format(duration - time)}</div>
     </div>
   )
+}
+
+Progress.propTypes = {
+  className: PropTypes.string,
+  time: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  duration: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  onSkip: PropTypes.func,
 }
 
 export default Progress

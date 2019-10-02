@@ -1,4 +1,5 @@
 import React, {useContext, useState, useCallback, useMemo} from 'react'
+import PropTypes from 'prop-types'
 import FontAwesomeIcon from '../Icon/Icon'
 import cn from '../../utils/classNames'
 import {evaluate} from '../../utils/props'
@@ -76,6 +77,22 @@ const Item = ({children, className, disabled, value = null}) => {
       {children}
     </li>
   )
+}
+
+SelectList.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  disabled: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.oneOfType([PropTypes.any, PropTypes.func]),
+}
+
+Item.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  disabled: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  value: PropTypes.any,
 }
 
 SelectList.Item = Item
