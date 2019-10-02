@@ -24,7 +24,7 @@ const TimeLine = ({className, duration = 0, time = 0, onSkip = () => {}}) => {
     <div className={cn('TimeLine__track', {}, className)}>
       <div
         className={cn('TimeLine__hover-track', {active: hover.show})}
-        onClick={e => onSkip(hover.time)}
+        onClick={() => onSkip(hover.time)}
         onMouseEnter={() => setHover(hover => ({...hover, show: true}))}
         onMouseMove={e => {
           const distance = mouseDistance(e)
