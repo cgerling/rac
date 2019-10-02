@@ -10,7 +10,7 @@ import TimeJump from '../TimeJump/TimeJump'
 
 import './Player.css'
 
-const Portal = ({className, src}) => {
+const Player = ({className, src}) => {
   const playerRef = useRef(null)
   const videoRef = useRef(null)
   const [currentTime, setCurrentTime] = useState(0)
@@ -148,4 +148,4 @@ const Portal = ({className, src}) => {
   )
 }
 
-export default Portal
+export default Player
