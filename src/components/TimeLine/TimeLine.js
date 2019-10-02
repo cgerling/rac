@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import cn from '../../utils/classNames'
 import {format} from '../../utils/time'
 
@@ -50,6 +51,13 @@ const TimeLine = ({className, duration = 0, time = 0, onSkip = () => {}}) => {
       ></div>
     </div>
   )
+}
+
+TimeLine.propTypes = {
+  className: PropTypes.string,
+  duration: PropTypes.number,
+  time: PropTypes.number,
+  onSkip: PropTypes.func,
 }
 
 export default TimeLine
