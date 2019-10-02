@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import cn from '../../utils/classNames'
 import {evaluate} from '../../utils/props'
 import './Button.css'
@@ -30,6 +31,14 @@ const Button = ({
       {children}
     </button>
   )
+}
+
+Button.propTypes = {
+  focus: PropTypes.bool,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  onPointerEnter: PropTypes.func,
+  onPointerLeave: PropTypes.func,
 }
 
 export default Button
