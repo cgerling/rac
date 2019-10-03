@@ -28,6 +28,7 @@ module.exports = {
   plugins: ['react', 'jsx-a11y', 'jest'],
   rules: {
     'react/prop-types': 'warn',
+    'jsx-a11y/media-has-caption': 'off',
   },
   settings: {
     react: {
