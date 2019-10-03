@@ -18,8 +18,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - uses: nuxt/actions-yarn@master
-        with: 
+        with:
           node-version: 12
       - run: yarn install
+      - run: yarn lint
       - run: yarn build
       - run: yarn test --passWithNoTests
