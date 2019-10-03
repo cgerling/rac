@@ -1,7 +1,6 @@
 # rac
 
-![][build-badge]
-[![GNU LGPLv3][license-badge]][license]
+[![GitHub][build-badge]][build] [![GNU LGPLv3][license-badge]][license]
 
 > A minimal player interface that brings some comodities to both desktop and
 > mobile devices.
@@ -19,7 +18,6 @@ rac is [licensed][license] under the GNU LGPLv3.
 
 [license]: LICENSE
 [front]: other/rac-front.png
-[build-badge]:
-  https://github.com/calvingerling/rac/workflows/build/badge.svg
-[license-badge]:
-  https://img.shields.io/badge/license-GNU%20LGPLv3-brightgreen?style=flat-square
+[build]: https://github.com/calvingerling/rac/actions?workflow=build
+[build-badge]: https://github.com/calvingerling/rac/workflows/build/badge.svg
+[license-badge]: https://img.shields.io/badge/license-LGPL--3.0-brightgreen
