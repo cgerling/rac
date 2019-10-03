@@ -11,8 +11,8 @@ const ToggleButton = ({
   value = false,
   ...props
 }) => {
-  value = evaluate(value)
-  const [enabled, setEnabled] = useState(Boolean(value))
+  value = Boolean(evaluate(value))
+  const [enabled, setEnabled] = useState(value)
 
   return (
     <Button
@@ -29,7 +29,7 @@ const ToggleButton = ({
 }
 
 ToggleButton.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.func,
   className: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
