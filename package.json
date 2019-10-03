@@ -8,7 +8,7 @@
     "lint:js": "eslint src/",
     "lint:css": "stylelint src/**/*.css",
     "lint": "yarn run lint:js; yarn run lint:css",
-    "storybook": "start-storybook -p 6001",
+    "storybook": "start-storybook -p 6001 -c config/storybook",
     "storybook:build": "build-storybook",
     "build": "rollup -c",
     "test": "jest",
