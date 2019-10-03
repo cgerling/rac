@@ -67,14 +67,13 @@ const Item = ({children, className, disabled, value = null}) => {
   const selected = value === context.value
 
   return (
-    <li
-      className={cn('SelectList__item', {selected, disabled}, className)}
-      onClick={() => !disabled && context.select(value)}
-    >
-      {selected && (
-        <FontAwesomeIcon className="SelectList__check" icon="check" />
-      )}
-      {children}
+    <li className={cn('SelectList__item', {selected, disabled}, className)}>
+      <button onClick={() => !disabled && context.select(value)}>
+        {selected && (
+          <FontAwesomeIcon className="SelectList__check" icon="check" />
+        )}
+        {children}
+      </button>
     </li>
   )
 }
