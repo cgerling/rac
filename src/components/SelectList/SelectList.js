@@ -25,6 +25,7 @@ const SelectList = ({
   name,
   onChange = () => {},
   value = null,
+  ...props
 }) => {
   disabled = Boolean(evaluate(disabled))
   value = evaluate(value)
@@ -49,9 +50,11 @@ const SelectList = ({
   )
 
   return (
-    <div className={cn('SelectList', {disabled}, className)}>
-      <p className="SelectList__name">{name}</p>
-      <ul className="SelectList__items">
+    <div {...props} className={cn('SelectList', {disabled}, className)}>
+      <p className="SelectList__name" data-testid="title">
+        {name}
+      </p>
+      <ul className="SelectList__items" data-testid="list">
         <SelectListContext.Provider value={context}>
           {children}
         </SelectListContext.Provider>
