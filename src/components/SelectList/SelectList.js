@@ -6,7 +6,7 @@ import {evaluate} from '../../utils/props'
 
 import './SelectList.css'
 
-const SelectListContext = React.createContext({})
+const SelectListContext = React.createContext()
 const useSelectListContext = () => {
   const context = useContext(SelectListContext)
   if (!context) {
