@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
     "@fortawesome/free-solid-svg-icons": "^5.11.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@testing-library/react": "^9.2.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },
@@ -49,7 +50,6 @@
     "prettier": "1.18.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "react-testing-library": "^8.0.1",
     "rollup": "^1.22.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
