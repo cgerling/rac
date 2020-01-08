@@ -18,9 +18,6 @@ Button.propTypes = {
   active: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   children: PropTypes.node,
   className: PropTypes.string,
-  onPointerEnter: PropTypes.func,
-  onPointerLeave: PropTypes.func,
-  onPointerOut: PropTypes.func,
 }
 
 export default Button
