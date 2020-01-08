@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from '../../utils/classNames'
-import {evaluate} from '../../utils/props'
+import evaluate from '../../utils/props'
 import './Button.css'
 
 const Button = ({active = false, children, className, ...props}) => {
-  active = Boolean(evaluate(active))
+  active = evaluate(active, Boolean)
 
   return (
     <button className={cn('Button', {active}, className)} {...props}>
